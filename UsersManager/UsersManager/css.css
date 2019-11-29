@@ -1,0 +1,19 @@
+﻿#div{
+    text-align:center;
+}
+.tb_content td{
+    height:35px;
+    padding:0px;
+    border-bottom-style:dashed;
+    border-bottom-width:1px;
+
+}
+.tb_content{
+    border-width:0px;
+    border-collapse:collapse;
+    width:600px;
+    text-align:left;
+}
+.nobordertb td{
+    border:0;
+}
