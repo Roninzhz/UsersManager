@@ -11,7 +11,12 @@ namespace UsersManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        protected void ddluImage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            imguImage.ImageUrl = imguImage.ImageUrl.Substring(0, imguImage.ImageUrl.LastIndexOf("/") + 1) + ddluImage.SelectedValue;
         }
     }
 }
