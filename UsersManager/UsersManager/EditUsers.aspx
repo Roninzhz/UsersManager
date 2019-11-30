@@ -17,7 +17,7 @@
     <form id="form1" runat="server">
         <table class="auto-style1">
             <tr>
-                <td>【添加会员】<br />
+                <td>【修改信息】<br />
                     ----------------------------------------------------------------------------</td>
             </tr>
             <tr>
@@ -38,17 +38,19 @@
                     <asp:ListItem>男</asp:ListItem>
                     <asp:ListItem>女</asp:ListItem>
                     </asp:RadioButtonList>
+                    <br />
+                    年龄：<asp:TextBox ID="txtuAge" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td>爱好：<asp:RadioButtonList ID="cbluHobby" runat="server" RepeatDirection="Horizontal">
+                <td>爱好：<asp:CheckBoxList ID="cbluHobby" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem>看书</asp:ListItem>
                     <asp:ListItem>上网</asp:ListItem>
                     <asp:ListItem>音乐</asp:ListItem>
                     <asp:ListItem>打球</asp:ListItem>
                     <asp:ListItem>跑步</asp:ListItem>
                     <asp:ListItem>游泳</asp:ListItem>
-                    </asp:RadioButtonList>
+                    </asp:CheckBoxList>
                 </td>
             </tr>
             <tr>
@@ -80,7 +82,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="btnEdit" runat="server" Text="修改" />
+                    <asp:Button ID="btnEdit" runat="server" Text="修改" OnClick="btnEdit_Click" style="width: 40px" />
                 </td>
             </tr>
         </table>

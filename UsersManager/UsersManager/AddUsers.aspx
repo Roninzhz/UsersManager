@@ -37,17 +37,19 @@
                     <asp:ListItem>男</asp:ListItem>
                     <asp:ListItem>女</asp:ListItem>
                     </asp:RadioButtonList>
+                    <br />
+                    年龄：<asp:TextBox ID="txtuAge" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td>爱好：<asp:RadioButtonList ID="cbluHobby" runat="server" RepeatDirection="Horizontal">
+                <td>爱好：<asp:CheckBoxList ID="cbluHobby" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem>看书</asp:ListItem>
                     <asp:ListItem>上网</asp:ListItem>
                     <asp:ListItem>音乐</asp:ListItem>
                     <asp:ListItem>打球</asp:ListItem>
                     <asp:ListItem>跑步</asp:ListItem>
                     <asp:ListItem>游泳</asp:ListItem>
-                    </asp:RadioButtonList>
+                    </asp:CheckBoxList>
                 </td>
             </tr>
             <tr>
@@ -74,12 +76,12 @@
                     <asp:ListItem>8.gif</asp:ListItem>
                     <asp:ListItem>9.gif</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:Image ID="imguImage" runat="server" ImageUrl="~/Images/userico/1.gif" />
+                    <asp:Image ID="imguImage" runat="server" ImageUrl="~/Images/userico/1.gif"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="btnAdd" runat="server" Text="添加" />
+                    <asp:Button ID="btnAdd" runat="server" Text="添加" OnClick="btnAdd_Click" />
                 </td>
             </tr>
         </table>
