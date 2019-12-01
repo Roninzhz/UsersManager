@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace UsersManager
 {
@@ -34,8 +30,8 @@ namespace UsersManager
                         txtuAge.Text = user.uAge.ToString();
                         string[] hobbys = user.uHobby.Split(',');
                         for (int i = 0; i < cbluHobby.Items.Count; i++)
-                            for(int j=0;j<hobbys.Length;j++)
-                                if(cbluHobby.Items[i].Value==hobbys[j])
+                            for (int j = 0; j < hobbys.Length; j++)
+                                if (cbluHobby.Items[i].Value == hobbys[j])
                                 {
                                     cbluHobby.Items[i].Selected = true;
                                     break;
@@ -61,7 +57,7 @@ namespace UsersManager
             int id = int.Parse(Request["id"].ToString());
             UsersDataContext lq = new UsersDataContext();
             var users = from gt in lq.Users where gt.uID == id select gt;
-            foreach(Users user in users)
+            foreach (Users user in users)
             {
                 user.uName = txtuName.Text;
                 user.uPwd = txtuPwd.Text;
@@ -72,8 +68,8 @@ namespace UsersManager
                 for (int i = 0; i < cbluHobby.Items.Count; i++)
                 {
                     if (cbluHobby.Items[i].Selected)
-                        user.uHobby += cbluHobby.Items[i].Value+",";
-                }   
+                        user.uHobby += cbluHobby.Items[i].Value + ",";
+                }
                 user.uEmail = txtuEmail.Text;
                 user.uQQ = txtuQQ.Text;
                 user.uPhone = txtuPhone.Text;
