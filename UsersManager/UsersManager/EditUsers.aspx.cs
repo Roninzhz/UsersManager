@@ -39,9 +39,8 @@ namespace UsersManager
                         txtuEmail.Text = user.uEmail;
                         txtuQQ.Text = user.uQQ;
                         txtuPhone.Text = user.uPhone;
-                        ddluImage.SelectedValue = user.uImage;
-                        imguImage.ImageUrl = user.uImage + ddluImage.SelectedValue;
-
+                        ddluImage.SelectedValue = user.uImage.Substring(user.uImage.Length - 5, 5);
+                        imguImage.ImageUrl = user.uImage;
                     }
                 }
             }
@@ -73,7 +72,7 @@ namespace UsersManager
                 user.uEmail = txtuEmail.Text;
                 user.uQQ = txtuQQ.Text;
                 user.uPhone = txtuPhone.Text;
-                user.uImage = imguImage.ImageUrl.Substring(0, imguImage.ImageUrl.LastIndexOf("/") + 1);
+                user.uImage = imguImage.ImageUrl.Substring(0, imguImage.ImageUrl.LastIndexOf("/") + 1)+ddluImage.SelectedValue;
                 user.uRegTime = System.DateTime.Now;
             }
             lq.SubmitChanges();

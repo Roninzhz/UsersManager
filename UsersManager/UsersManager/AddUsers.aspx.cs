@@ -31,11 +31,11 @@ namespace UsersManager
             user.uAge = Convert.ToInt16(txtuAge.Text);
             for (int i = 0; i < cbluHobby.Items.Count; i++)
                 if (cbluHobby.Items[i].Selected)
-                    user.uHobby += cbluHobby.Items[i].Value;
+                    user.uHobby += cbluHobby.Items[i].Value+",";
             user.uEmail = txtuEmail.Text;
             user.uQQ = txtuQQ.Text;
             user.uPhone = txtuPhone.Text;
-            user.uImage = imguImage.ImageUrl.Substring(0, imguImage.ImageUrl.LastIndexOf("/") + 1);
+            user.uImage = imguImage.ImageUrl.Substring(0, imguImage.ImageUrl.LastIndexOf("/") + 1)+ddluImage.SelectedValue;
             user.uRegTime = System.DateTime.Now;
             lq.Users.InsertOnSubmit(user);
             lq.SubmitChanges();
