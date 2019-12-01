@@ -44,7 +44,8 @@ namespace UsersManager
                         txtuQQ.Text = user.uQQ;
                         txtuPhone.Text = user.uPhone;
                         ddluImage.SelectedValue = user.uImage;
-                        imguImage.ImageUrl = imguImage.ImageUrl.Substring(0, imguImage.ImageUrl.LastIndexOf("/") + 1) + user.uImage;
+                        imguImage.ImageUrl = user.uImage + ddluImage.SelectedValue;
+
                     }
                 }
             }
@@ -52,8 +53,7 @@ namespace UsersManager
 
         protected void ddluImage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            imguImage.ImageUrl = imguImage.ImageUrl.Substring(0, imguImage.ImageUrl.LastIndexOf("/") + 1)+ddluImage.SelectedValue;
-            
+            imguImage.ImageUrl = imguImage.ImageUrl.Substring(0, imguImage.ImageUrl.LastIndexOf("/") + 1) + ddluImage.SelectedValue;
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)
@@ -68,9 +68,12 @@ namespace UsersManager
                 user.uRealName = txtuRealName.Text;
                 user.uSex = rbluSex.SelectedValue;
                 user.uAge = Convert.ToInt16(txtuAge.Text);
+                user.uHobby = "";
                 for (int i = 0; i < cbluHobby.Items.Count; i++)
+                {
                     if (cbluHobby.Items[i].Selected)
-                        user.uHobby += cbluHobby.Items[i].Value;
+                        user.uHobby += cbluHobby.Items[i].Value+",";
+                }   
                 user.uEmail = txtuEmail.Text;
                 user.uQQ = txtuQQ.Text;
                 user.uPhone = txtuPhone.Text;

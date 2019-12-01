@@ -66,7 +66,7 @@
                 </td>
             </tr>
             <tr>
-                <td>头像：<asp:DropDownList ID="ddluImage" runat="server" OnSelectedIndexChanged="ddluImage_SelectedIndexChanged" AutoPostBack="True">
+                <td>头像：<asp:DropDownList ID="ddluImage" runat="server"  OnSelectedIndexChanged="ddluImage_SelectedIndexChanged" AutoPostBack="True">
                     <asp:ListItem>1.gif</asp:ListItem>
                     <asp:ListItem>2.gif</asp:ListItem>
                     <asp:ListItem>3.gif</asp:ListItem>
@@ -82,7 +82,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="btnEdit" runat="server" Text="修改" OnClick="btnEdit_Click" style="width: 40px" />
+                    <asp:Button ID="btnEdit" runat="server" Text="修改" OnClick="btnEdit_Click" />
                 </td>
             </tr>
         </table>
